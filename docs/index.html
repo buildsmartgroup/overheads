@@ -1,0 +1,169 @@
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#00314F">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Overheads">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="favicon-32x32.png">
+<title>Business overheads – Buildsmart</title>
+<style>
+:root{--navy:#00314F;--navy9:#002335;--green:#84BD00;--greent:#5B8200;--red:#B3261E;--reds:#FBE6E5;--amb:#A5670A;--ambs:#FBF0DC;--g6:#4E6675;--g2:#DDE4E8;--g1:#EDF1F3;--g05:#F6F8F9}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:var(--g05);color:#111A20;font-size:16px;-webkit-text-size-adjust:100%}
+header{background:var(--navy);color:#fff;padding:calc(env(safe-area-inset-top) + 14px) 18px 20px;border-bottom:4px solid var(--green)}
+.top{display:flex;justify-content:space-between;align-items:center}.top img{height:30px}
+.top button{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:6px;padding:6px 10px;font:600 12px Inter,Arial;letter-spacing:.08em}
+.eyebrow{font:700 12px Inter,Arial;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:18px 0 4px}
+h1{font-size:22px;margin:0 0 14px;font-weight:700}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kpi{background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.kpi .l{font-size:12px;opacity:.8}.kpi .v{font-size:24px;font-weight:800;margin-top:2px;letter-spacing:-.02em}
+.kpi.wide{grid-column:1/-1}.upd{font-size:13px;opacity:.75;margin-top:12px}
+main{padding:14px 14px 48px;max-width:640px;margin:auto}
+.chips{display:flex;gap:8px;margin:4px 0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch}.chip{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:9px 14px;font:600 14px Inter,Arial;white-space:nowrap}
+.chip.on{background:var(--navy);color:#fff}
+.card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,35,53,.12);margin-bottom:12px;overflow:hidden}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.ch h2{font-size:17px;margin:0;color:var(--navy)}.ch .t{font-size:18px;font-weight:800;color:var(--navy);white-space:nowrap;margin-left:10px}
+.ch .s{font-size:12px;color:var(--g6);margin-top:3px}.ch .chev{color:var(--g6);font-size:18px;margin-left:8px;transition:transform .15s}
+.ch.open .chev{transform:rotate(90deg)}
+.row{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-top:1px solid var(--g1);gap:8px}
+.row .n{font-size:15px;color:#22323C;flex:1;min-width:0}.row .a{font-weight:700;font-size:16px;white-space:nowrap;color:var(--navy)}
+.row.zero .a{color:var(--g6);font-weight:600}.row.cat{cursor:pointer}.row.cat:active{background:var(--g1)}
+.bill{padding:12px 16px;border-top:1px solid var(--g1)}.bill .r1{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.bill .sup{font-weight:700;font-size:15px}.bill .amt{font-weight:800;font-size:16px;color:var(--navy)}
+.bill .meta{font-size:13px;color:var(--g6);margin-top:4px;line-height:1.4}.bill .meta b{color:#22323C;font-weight:600}
+.badge{display:inline-block;background:var(--amb);color:#fff;font:700 10px Inter,Arial;letter-spacing:.06em;border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:2px}
+.badge.unpaid{background:var(--red)}.badge.paid{background:var(--greent)}
+h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--greent);margin:22px 4px 10px}
+.note{font-size:13px;color:var(--g6);line-height:1.45;margin:0 4px 12px}
+.flag{background:var(--ambs);border-left:5px solid var(--amb);border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.flag b{display:block;margin-bottom:4px}.flag p{margin:0;font-size:14px;line-height:1.4;color:#22323C}
+.foot{font-size:13px;color:var(--g6);text-align:center;margin-top:24px;line-height:1.5}
+#lock{position:fixed;inset:0;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;z-index:9}
+#lock img{height:44px;margin-bottom:30px}#lock input{font-size:20px;padding:14px;border-radius:8px;border:0;width:100%;max-width:320px;text-align:center}
+#lock button{margin-top:14px;background:var(--green);color:var(--navy9);border:0;border-radius:8px;padding:14px 30px;font:700 15px Inter,Arial;letter-spacing:.1em;width:100%;max-width:320px}
+#err{color:#FF8A80;min-height:22px;margin-top:10px}#app{display:none}
+#sheet{display:none;position:fixed;inset:0;background:rgba(0,35,53,.55);z-index:8;align-items:flex-end;justify-content:center}
+#sheet.on{display:flex}.sheet-in{background:#fff;border-radius:16px 16px 0 0;width:100%;max-width:640px;max-height:85vh;overflow:auto;padding:8px 0 28px}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;padding:12px 18px 8px;position:sticky;top:0;background:#fff;border-bottom:1px solid var(--g2)}
+.sheet-h h2{font-size:17px;margin:0;color:var(--navy)}.sheet-h button{background:none;border:0;font:700 14px Inter,Arial;color:var(--navy);padding:8px}
+.empty{padding:18px 16px;color:var(--g6);font-size:14px}
+</style></head><body>
+<div id="lock"><img src="bsg-logo-reversed.svg" alt="Buildsmart Group"><div style="font-size:20px;font-weight:700;margin-bottom:6px">Business overheads</div>
+<div style="opacity:.8;margin-bottom:22px">Enter your passcode to open</div>
+<form id="f"><input id="pw" type="password" autocomplete="current-password" placeholder="Passcode"><br><button>OPEN</button></form><div id="err"></div></div>
+<div id="app"><header><div class="top"><img src="bsg-logo-reversed.svg" alt="Buildsmart Group"><button id="lk">LOCK</button></div>
+<div class="eyebrow">Buildsmart Group</div><h1>Business overheads</h1>
+<div class="kpis">
+  <div class="kpi"><div class="l" id="kpi1l">This month</div><div class="v" id="kpi1"></div></div>
+  <div class="kpi"><div class="l" id="kpi2l">Year to date</div><div class="v" id="kpi2"></div></div>
+  <div class="kpi wide"><div class="l" id="kpi3l">Last 12 months</div><div class="v" id="kpi3"></div></div>
+</div>
+<div class="upd" id="upd"></div></header>
+<main>
+<div class="chips">
+  <button class="chip on" data-p="month">This month</button>
+  <button class="chip" data-p="ytd">Year to date</button>
+  <button class="chip" data-p="l12">Last 12 months</button>
+</div>
+<div id="cards"></div>
+<div id="unalloc-wrap"></div>
+<div id="trade-wrap"></div>
+<div class="foot">GST-inclusive · From Wunderbuild Overheads Factory<br>Trade account check lists are not counted in the totals above.</div>
+</main></div>
+<div id="sheet"><div class="sheet-in"><div class="sheet-h"><h2 id="sh-title"></h2><button id="sh-x">CLOSE</button></div><div id="sh-body"></div></div></div>
+<script>
+const V='06b8c26787';const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);
+const fmt=n=>'$'+Number(n||0).toLocaleString('en-AU',{minimumFractionDigits:0,maximumFractionDigits:0});
+const fmt2=n=>'$'+Number(n||0).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+const D=s=>s?new Date(s+'T00:00').toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}):'—';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ub=b=>Uint8Array.from(atob(b),c=>c.charCodeAt(0));
+let DATA,P='month',OPEN={};
+
+async function unlock(pw){const e=await (await fetch('data.enc.json?v='+Date.now(),{cache:'no-store'})).json();
+ const k0=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+ const k=await crypto.subtle.deriveKey({name:'PBKDF2',salt:ub(e.salt),iterations:e.iter,hash:'SHA-256'},k0,{name:'AES-GCM',length:256},false,['decrypt']);
+ return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:ub(e.iv)},k,ub(e.ct))))}
+
+function amt(cat){const t=DATA.tree.flatMap(g=>g.categories).find(c=>c.category===cat);return t?t[P]:0}
+function gAmt(g){return g[P]||0}
+
+function render(){
+  const per=DATA.periods;
+  $('#kpi1').textContent=fmt(per.month.total);
+  $('#kpi2').textContent=fmt(per.ytd.total);
+  $('#kpi3').textContent=fmt(per.l12.total);
+  $('#kpi1l').textContent=per.month.label||'This month';
+  $('#kpi2l').textContent=(per.ytd.label||'YTD')+' year to date';
+  $('#kpi3l').textContent='Last 12 months';
+  const u=new Date(DATA.updated);
+  $('#upd').textContent=`${DATA.meta.overhead_bills} overhead bills · Updated ${u.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'})}, ${u.toLocaleTimeString('en-AU',{hour:'numeric',minute:'2-digit'})}`;
+
+  $('#cards').innerHTML=DATA.tree.map((g,gi)=>{
+    const open=!!OPEN[g.group];
+    const rows=g.categories.map(c=>{
+      const a=c[P]||0;
+      return `<div class="row cat ${a?'' :'zero'}" data-cat="${esc(c.category)}"><div class="n">${esc(c.category)}</div><div class="a">${fmt2(a)}</div></div>`;
+    }).join('');
+    return `<div class="card"><div class="ch ${open?'open':''}" data-g="${esc(g.group)}"><div><h2>${esc(g.group)}</h2><div class="s">${g.categories.length} categories</div></div><div style="display:flex;align-items:center"><div class="t">${fmt(gAmt(g))}</div><span class="chev">›</span></div></div>
+      <div class="body" style="display:${open?'block':'none'}">${rows}</div></div>`;
+  }).join('');
+
+  // Unallocated
+  const ua=DATA.unallocated;
+  const uaAmt=ua[P]||0;
+  let uh=`<h3>Unallocated</h3><p class="note">Bills that didn't map cleanly from Wunderbuild. Tap to review.</p>`;
+  if(ua.bills.length){
+    uh+=`<div class="card"><div class="ch" id="ua-toggle"><div><h2>Needs a category</h2><div class="s">${ua.bills.length} bill${ua.bills.length>1?'s':''}</div></div><div class="t">${fmt(uaAmt)}</div></div>
+    <div id="ua-body" style="display:none">${ua.bills.map(b=>billHtml(b)).join('')}</div></div>`;
+  } else {
+    uh+=`<div class="card"><div class="empty">Nothing unallocated — every bill has a category.</div></div>`;
+  }
+  $('#unalloc-wrap').innerHTML=uh;
+
+  // Trade checks
+  const tc=DATA.trade_checks||[];
+  const anyT=tc.some(t=>(t[P]||0)>0||t.count>0);
+  let th=`<h3>Trade account check lists</h3><p class="note">Not counted in overhead totals. Individual invoices should already be on jobs or in Xero.</p>`;
+  if(anyT){
+    th+=`<div class="card">${tc.map(t=>`<div class="row ${t[P]?'':'zero'}"><div class="n">${esc(t.category)} <span style="color:var(--g6);font-size:12px">(${t.count})</span></div><div class="a">${fmt2(t[P]||0)}</div></div>`).join('')}</div>`;
+  } else {
+    th+=`<div class="card"><div class="empty">No trade-account bills in this period.</div></div>`;
+  }
+  $('#trade-wrap').innerHTML=th;
+
+  // Bind group toggles
+  $$('.ch[data-g]').forEach(el=>el.onclick=()=>{
+    const g=el.dataset.g;OPEN[g]=!OPEN[g];render();
+  });
+  $$('.row.cat').forEach(el=>el.onclick=()=>openCat(el.dataset.cat));
+  const uat=$('#ua-toggle');
+  if(uat)uat.onclick=()=>{const b=$('#ua-body');b.style.display=b.style.display==='none'?'block':'none'};
+}
+
+function billHtml(b){
+  const st=(b.status||'').toUpperCase();
+  const badge=st==='UNPAID'?'<span class="badge unpaid">UNPAID</span>':(st==='PAID'?'<span class="badge paid">PAID</span>':'');
+  return `<div class="bill"><div class="r1"><div class="sup">${esc(b.supplier)}${badge}</div><div class="amt">${fmt2(b.amount)}</div></div>
+    <div class="meta"><b>${esc(b.ref||b.po)}</b> · ${D(b.date)}${b.allocation?` · <i>${esc(b.allocation)}</i>`:''}<br>${esc(b.description||'')}</div></div>`;
+}
+
+function openCat(cat){
+  const per=DATA.periods[P];
+  const start=per.start, end=DATA.today;
+  const bills=DATA.bills.filter(b=>b.category===cat && b.date>=start && b.date<=end);
+  $('#sh-title').textContent=cat;
+  $('#sh-body').innerHTML=bills.length?bills.map(billHtml).join(''):`<div class="empty">No bills in ${esc(per.label||P)} for this category.</div>`;
+  $('#sheet').classList.add('on');
+}
+
+async function go(pw,quiet){try{DATA=await unlock(pw);localStorage.setItem('bsgohpw',pw);$('#lock').style.display='none';$('#app').style.display='block';render()}
+ catch(e){localStorage.removeItem('bsgohpw');if(!quiet)$('#err').textContent=navigator.onLine?'That passcode didn\'t work.':'You\'re offline – try again when connected.'}}
+$('#f').onsubmit=e=>{e.preventDefault();go($('#pw').value.trim())};
+$('#lk').onclick=()=>{localStorage.removeItem('bsgohpw');location.reload()};
+$('#sh-x').onclick=()=>$('#sheet').classList.remove('on');
+$('#sheet').onclick=e=>{if(e.target.id==='sheet')$('#sheet').classList.remove('on')};
+$$('.chip').forEach(c=>c.onclick=()=>{$$('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');P=c.dataset.p;render()});
+const s=localStorage.getItem('bsgohpw');if(s)go(s,true);
+document.addEventListener('visibilitychange',()=>{const p=localStorage.getItem('bsgohpw');if(!document.hidden&&p&&DATA)go(p,true)});
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+</script></body></html>
